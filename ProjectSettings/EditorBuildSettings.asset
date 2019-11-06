@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Support Assets/LigandoAsPecas/Scenes/SampleScene.unity
     guid: d8809713bf56a0547a4935737fb169d2
   - enabled: 0
-    path: Assets/TESTE/Scenes/CENA_TESTE.unity
-    guid: 445d1e8d324ef0e4f849ad451200b928
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/RandomScene.unity
     guid: 8094808870430084a9e2a3daf1b1da5b
+  - enabled: 1
+    path: Assets/Scenes/TesteScene.unity
+    guid: 138c8a70822f2054dada77562e420554
   m_configObjects: {}

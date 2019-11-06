@@ -48,7 +48,7 @@ PrefabInstance:
     - target: {fileID: 945050956755402515, guid: a5a3a4aafe217b44b8d8f6ddc6848f9e,
         type: 3}
       propertyPath: m_Name
-      value: pipe1
+      value: PrefabVariantSource
       objectReference: {fileID: 0}
     - target: {fileID: 945050956755402515, guid: a5a3a4aafe217b44b8d8f6ddc6848f9e,
         type: 3}
