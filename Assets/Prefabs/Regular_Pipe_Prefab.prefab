@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 6399013174163758237}
   - component: {fileID: 6399013174162628189}
   - component: {fileID: 8566975884159831837}
+  - component: {fileID: 6255300630592676172}
+  - component: {fileID: 7306921964356031438}
   - component: {fileID: 2165175164902593664}
   - component: {fileID: 1668196841835284916}
   - component: {fileID: 1300473512431604561}
-  - component: {fileID: 6255300630592676172}
-  - component: {fileID: 7306921964356031438}
   m_Layer: 0
   m_Name: Regular_Pipe_Prefab
   m_TagString: Contato
@@ -97,65 +97,6 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2165175164902593664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6399013174164619421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aaf3bb8277abe04cabe99c361cd93b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ligado: 0
-  fonte: 0
-  contatos: []
---- !u!114 &1668196841835284916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6399013174164619421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9ba43172016dfe42a27f38479e6a188, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1300473512431604561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6399013174164619421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a28bb3d5981b2c141b70b3d17b690a4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_gazeEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_gazeExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_completionEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1668196841835284916}
-        m_MethodName: Rotate
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!54 &6255300630592676172
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -210,3 +151,62 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &2165175164902593664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6399013174164619421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aaf3bb8277abe04cabe99c361cd93b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ligado: 0
+  fonte: 0
+  contatos: []
+--- !u!114 &1668196841835284916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6399013174164619421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ba43172016dfe42a27f38479e6a188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1300473512431604561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6399013174164619421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a28bb3d5981b2c141b70b3d17b690a4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_gazeEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_gazeExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_completionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1668196841835284916}
+        m_MethodName: Rotate
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 90
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
