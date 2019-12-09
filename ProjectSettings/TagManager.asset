@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Contato
   - Fonte
+  - Room
   layers:
   - Default
   - TransparentFX
