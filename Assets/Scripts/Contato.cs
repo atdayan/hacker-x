@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Contato : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Contato : MonoBehaviour
     private static Material on;
     private static Material finish;
 
+    // public LevelChanger levelChanger;
     //cada contato pode estar ligado a apenas dois outros, um sera a provavel fonte e o outro o destino
     //obs, dessa forma nao tem como ligar 3 contatos, tem que modificar o codigo pra isso
     public List<Contato> contatos = new List<Contato>();
@@ -31,6 +33,8 @@ public class Contato : MonoBehaviour
         } else {
             off = GetComponent<Renderer>().material;
         }
+
+        // levelChanger = FindObjectOfType<LevelChanger>();
     }
 
 
@@ -86,9 +90,16 @@ public class Contato : MonoBehaviour
                 turnBoolOn(c.contatos);
             }
             if (c.name.Equals("CrossEnd")) {
-                Debug.Log("desapariciones");
+                //FindObjectOfType<GameManager>().EndGame();
+                // Invoke("NextLevel", 0.3f);
+                NextLevel();
             }
         }
+    }
+
+    void NextLevel() {
+        // levelChanger.FadeToNextLevel();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void updateMaterial(){
