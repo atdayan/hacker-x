@@ -9,10 +9,11 @@ public class Contato : MonoBehaviour
     //digo se esse contato será a fonte de energia
     public bool fonte = false;
 
+    public bool finishPoint = false;
     //guardo os dois tipos de materiais, o dele ligado e desligado
     private static Material off;
     private static Material on;
-
+    private static Material finish;
 
     //cada contato pode estar ligado a apenas dois outros, um sera a provavel fonte e o outro o destino
     //obs, dessa forma nao tem como ligar 3 contatos, tem que modificar o codigo pra isso
@@ -25,8 +26,9 @@ public class Contato : MonoBehaviour
         if (fonte){
             //o objeto fonte ja deve vir com o material que sera com ele ligado
             on = GetComponent<Renderer>().material;
-        } else 
-        if (off == null){
+        } else if (finishPoint){
+            finish = GetComponent<Renderer>().material;
+        } else {
             off = GetComponent<Renderer>().material;
         }
     }
@@ -73,13 +75,18 @@ public class Contato : MonoBehaviour
         foreach(GameObject c in cs){
             c.GetComponent<Contato>().updateMaterial();
         }
+
+
     }
 
-    public void turnBoolOn(List<Contato> conts){
-        foreach(Contato c in conts){
+    public void turnBoolOn(List<Contato> conts) {
+        foreach(Contato c in conts) {
             if (!c.ligado){
                 c.ligado = true;
                 turnBoolOn(c.contatos);
+            }
+            if (c.name.Equals("CrossEnd")) {
+                Debug.Log("desapariciones");
             }
         }
     }
@@ -95,13 +102,11 @@ public class Contato : MonoBehaviour
 
     public void liga(){
         GetComponent<Renderer>().material = on;
-        GetComponent<Light>().enabled = true;
         ligado = true;
     }
 
     public void desliga(){
         ligado = false;
         GetComponent<Renderer>().material = off;
-        GetComponent<Light>().enabled = false;
     }
 }
