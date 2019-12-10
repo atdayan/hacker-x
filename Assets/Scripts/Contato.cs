@@ -16,13 +16,13 @@ public class Contato : MonoBehaviour
     private static Material on;
     private static Material finish;
 
-    // public LevelChanger levelChanger;
+    public LevelChanger levelChanger;
     //cada contato pode estar ligado a apenas dois outros, um sera a provavel fonte e o outro o destino
     //obs, dessa forma nao tem como ligar 3 contatos, tem que modificar o codigo pra isso
     public List<Contato> contatos = new List<Contato>();
     
     
-    // Update is called once per frame
+    
     void Start () {
         //guardo os materiais
         if (fonte){
@@ -30,11 +30,11 @@ public class Contato : MonoBehaviour
             on = GetComponent<Renderer>().material;
         } else if (finishPoint){
             finish = GetComponent<Renderer>().material;
-        } else {
+        } else if (off == null) {
             off = GetComponent<Renderer>().material;
         }
 
-        // levelChanger = FindObjectOfType<LevelChanger>();
+        levelChanger = FindObjectOfType<LevelChanger>();
     }
 
 
@@ -90,15 +90,12 @@ public class Contato : MonoBehaviour
                 turnBoolOn(c.contatos);
             }
             if (c.name.Equals("CrossEnd")) {
-                //FindObjectOfType<GameManager>().EndGame();
-                // Invoke("NextLevel", 0.3f);
-                NextLevel();
+                Invoke("NextLevel", 0.2f);
             }
         }
     }
 
     void NextLevel() {
-        // levelChanger.FadeToNextLevel();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -118,6 +115,10 @@ public class Contato : MonoBehaviour
 
     public void desliga(){
         ligado = false;
-        GetComponent<Renderer>().material = off;
+        if(!finishPoint) {
+            GetComponent<Renderer>().material = off;
+        } else {
+            GetComponent<Renderer>().material = finish;
+        }
     }
 }
